@@ -177,7 +177,7 @@
     <h1>Accelerate Your Project!</h1>
     <p class="subtitle">Tell us what you need built</p>
     
-    <form onsubmit="event.preventDefault(); alert('Form submitted! (This is just a local preview)');">
+    <form id="leadForm">
       
       <div class="input-group">
         <label>I am registering as a:</label>
@@ -234,6 +234,10 @@
   </div>
   
   <script>
+    // Get the lead_id from the URL if it exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const leadId = urlParams.get('lead_id') || 'Unknown';
+
     function toggleCompanyField(show) {
       var field = document.getElementById('companyField');
       var input = document.getElementById('companyName');
@@ -246,6 +250,51 @@
         input.value = '';
       }
     }
+
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.innerText = 'Submitting...';
+      submitBtn.disabled = true;
+
+      // Collect data
+      const formData = new FormData(this);
+      const data = {
+        action: "submit_form",
+        leadId: leadId,
+        clientType: formData.get('clientType'),
+        name: formData.get('name'),
+        companyName: formData.get('companyName') || '',
+        email: formData.get('email'),
+        service: formData.get('service'),
+        details: formData.get('details') || ''
+      };
+
+      // Send to Google Apps Script
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxLRftndaH_znmmYtWfL9mmP9hoWXiPaBb8sOGBO5DPXZncXF4hX5akHaMgj8CEcMwW/exec";
+      
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // Used for simple Google Scripts POST
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        body: JSON.stringify(data)
+      }).then(() => {
+        alert('Thank you! Your details have been submitted successfully.');
+        this.reset();
+        submitBtn.innerText = 'Register Inquiry';
+        submitBtn.disabled = false;
+      }).catch((error) => {
+        console.error('Error!', error.message);
+        alert('Something went wrong. Please try again.');
+        submitBtn.innerText = 'Register Inquiry';
+        submitBtn.disabled = false;
+      });
+    });
   </script>
 </body>
 </html>
