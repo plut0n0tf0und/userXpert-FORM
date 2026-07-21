@@ -284,10 +284,23 @@
         redirect: 'follow',
         body: JSON.stringify(data)
       }).then(() => {
-        alert('Thank you! Your details have been submitted successfully.');
-        this.reset();
-        submitBtn.innerText = 'Register Inquiry';
-        submitBtn.disabled = false;
+        // Replace the form container with a success message
+        const container = document.querySelector('.form-container');
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px 10px;">
+            <div style="font-size: 50px; margin-bottom: 20px;">✅</div>
+            <h1 style="color: #B812B4; margin-bottom: 15px;">Submission Successful!</h1>
+            <p style="font-size: 16px; color: #555; line-height: 1.5; margin-bottom: 30px;">
+              Your details have been received. Redirecting you back to WhatsApp...
+            </p>
+            <a href="whatsapp://send" style="display: inline-block; background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px;">Return to WhatsApp</a>
+          </div>
+        `;
+
+        // Redirect to WhatsApp automatically after 2.5 seconds
+        setTimeout(() => {
+          window.location.href = "whatsapp://send";
+        }, 2500);
       }).catch((error) => {
         console.error('Error!', error.message);
         alert('Something went wrong. Please try again.');
