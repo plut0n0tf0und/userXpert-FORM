@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #B512B8; /* Matching the magenta from the logo/buttons */
+      --primary: #B512B8;
+      /* Matching the magenta from the logo/buttons */
       --primary-hover: #960e99;
       --primary-light: rgba(181, 18, 184, 0.1);
       --bg-color: #F8FAFC;
@@ -53,6 +55,7 @@
       text-align: center;
       margin-bottom: 24px;
     }
+
     .brand-header img {
       height: 36px;
       margin-bottom: 12px;
@@ -132,7 +135,7 @@
       color: var(--primary);
       box-shadow: 0 0 0 4px var(--primary-light);
     }
-    
+
     .step-indicator.completed {
       border-color: var(--primary);
       background: var(--primary);
@@ -161,8 +164,15 @@
     }
 
     @keyframes slideIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .step-title {
@@ -208,17 +218,19 @@
       font-weight: 500;
     }
 
-    input::placeholder, textarea::placeholder {
+    input::placeholder,
+    textarea::placeholder {
       color: #94A3B8;
       font-weight: 400;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
       background: var(--card-bg);
       border-color: var(--primary);
       box-shadow: 0 4px 12px var(--primary-light);
     }
-    
+
     textarea {
       resize: vertical;
       min-height: 110px;
@@ -254,10 +266,10 @@
       opacity: 0;
     }
 
-    .radio-card input[type="radio"]:checked + .radio-content {
+    .radio-card input[type="radio"]:checked+.radio-content {
       color: var(--primary);
     }
-    
+
     .radio-card:has(input[type="radio"]:checked) {
       border-color: var(--primary);
       background: var(--primary-light);
@@ -276,11 +288,11 @@
       flex-shrink: 0;
     }
 
-    .radio-card input[type="radio"]:checked ~ .radio-icon {
+    .radio-card input[type="radio"]:checked~.radio-icon {
       border-color: var(--primary);
     }
 
-    .radio-card input[type="radio"]:checked ~ .radio-icon::after {
+    .radio-card input[type="radio"]:checked~.radio-icon::after {
       content: '';
       width: 12px;
       height: 12px;
@@ -290,8 +302,13 @@
     }
 
     @keyframes scaleIn {
-      from { transform: scale(0); }
-      to { transform: scale(1); }
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
     }
 
     .radio-text {
@@ -304,6 +321,7 @@
       font-size: 15px;
       color: var(--text-main);
     }
+
     .radio-card:has(input[type="radio"]:checked) .radio-title {
       color: var(--primary);
     }
@@ -347,7 +365,7 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 20px var(--primary-light);
     }
-    
+
     .btn-next:active {
       transform: translateY(0);
     }
@@ -364,14 +382,31 @@
 
     /* Error Shake */
     .error-shake {
-      animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+      animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
     }
 
     @keyframes shake {
-      10%, 90% { transform: translate3d(-1px, 0, 0); }
-      20%, 80% { transform: translate3d(2px, 0, 0); }
-      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-      40%, 60% { transform: translate3d(4px, 0, 0); }
+
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
     }
 
     /* Success State */
@@ -401,15 +436,17 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="form-container">
-    
+
     <div id="formContent">
       <div class="brand-header">
-        <img src="userx%20logo%20light%20bg160.png" alt="userX.in" style="display: block; margin: 0 auto; height: 40px; max-width: 100%;">
+        <img src="userx logo light  bg160.png" alt="userX.in"
+          style="display: block; margin: 0 auto; height: 40px; max-width: 100%;">
       </div>
-      
+
       <div class="header">
         <h1>Project Requirements</h1>
         <p>Let's build something amazing together.</p>
@@ -423,14 +460,18 @@
       </div>
 
       <form id="leadForm">
-        
+
         <!-- STEP 1: Contact Details -->
         <div class="form-step active" id="step-1">
           <h2 class="step-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
             Contact Information
           </h2>
-          
+
           <div class="input-group">
             <label for="name">Name of Contact *</label>
             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -454,7 +495,11 @@
           <div class="btn-group">
             <button type="button" class="btn-next" onclick="nextStep(1)">
               Continue
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </button>
           </div>
         </div>
@@ -462,10 +507,14 @@
         <!-- STEP 2: Business & Service Details -->
         <div class="form-step" id="step-2">
           <h2 class="step-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
             Business & Requirements
           </h2>
-          
+
           <div class="input-group">
             <label for="businessName">Name of Business *</label>
             <input type="text" id="businessName" name="businessName" required placeholder="Acme Corp">
@@ -473,9 +522,10 @@
 
           <div class="input-group">
             <label for="serviceOffered">Service or Product You Offer *</label>
-            <input type="text" id="serviceOffered" name="serviceOffered" required placeholder="e.g. Real Estate Consulting">
+            <input type="text" id="serviceOffered" name="serviceOffered" required
+              placeholder="e.g. Real Estate Consulting">
           </div>
-          
+
           <div class="input-group">
             <label for="reqSummary">What do you need? (1 line summary) *</label>
             <input type="text" id="reqSummary" name="reqSummary" required placeholder="e.g. A new e-commerce website">
@@ -483,7 +533,8 @@
 
           <div class="input-group">
             <label for="expectedOutcome">Expected Outcome (1 line) *</label>
-            <input type="text" id="expectedOutcome" name="expectedOutcome" required placeholder="e.g. Increase online sales by 20%">
+            <input type="text" id="expectedOutcome" name="expectedOutcome" required
+              placeholder="e.g. Increase online sales by 20%">
           </div>
 
           <label style="margin-top: 32px; font-weight: 600;">How would you like to proceed? *</label>
@@ -510,7 +561,11 @@
             <button type="button" class="btn-prev" onclick="prevStep(2)">Back</button>
             <button type="submit" class="btn-next" id="submitBtn">
               Submit Request
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
             </button>
           </div>
         </div>
@@ -521,14 +576,22 @@
     <!-- Success View -->
     <div class="success-state" id="successState">
       <div class="success-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
       </div>
       <h2 style="margin-bottom: 12px; font-weight: 700;">Submission Successful!</h2>
       <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 32px; line-height: 1.6;">
         We've received your requirements. A confirmation email has been sent to you. We'll be in touch very soon!
       </p>
-      <div style="display:inline-flex; align-items:center; gap:8px; padding: 12px 24px; background: var(--primary-light); color: var(--primary); border-radius: 50px; font-weight: 600; font-size: 14px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      <div
+        style="display:inline-flex; align-items:center; gap:8px; padding: 12px 24px; background: var(--primary-light); color: var(--primary); border-radius: 50px; font-weight: 600; font-size: 14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+          </path>
+        </svg>
         Redirecting to WhatsApp...
       </div>
     </div>
@@ -540,20 +603,20 @@
     const urlParams = new URLSearchParams(window.location.search);
     const leadId = urlParams.get('lead_id') || 'Unknown';
     const missedCallPhone = urlParams.get('phone') || '';
-    
+
     // Pre-fill phone if provided
-    if(missedCallPhone) {
-        document.getElementById('whatsappNumber').value = decodeURIComponent(missedCallPhone);
+    if (missedCallPhone) {
+      document.getElementById('whatsappNumber').value = decodeURIComponent(missedCallPhone);
     }
 
     // Step Navigation Logic
     let currentStep = 1;
-    
+
     function validateStep(step) {
       const stepDiv = document.getElementById('step-' + step);
       const inputs = stepDiv.querySelectorAll('input[required], textarea[required]');
       let isValid = true;
-      
+
       inputs.forEach(input => {
         if (!input.value.trim()) {
           isValid = false;
@@ -571,8 +634,8 @@
       // 2 steps total: so step 1 = 0%, step 2 = 100%
       const progress = ((currentStep - 1) / 1) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      
-      for(let i=1; i<=2; i++) {
+
+      for (let i = 1; i <= 2; i++) {
         const ind = document.getElementById('indicator-' + i);
         if (i < currentStep) {
           ind.className = 'step-indicator completed';
@@ -589,7 +652,7 @@
 
     function nextStep(step) {
       if (!validateStep(step)) return;
-      
+
       document.getElementById('step-' + step).classList.remove('active');
       currentStep++;
       document.getElementById('step-' + currentStep).classList.add('active');
@@ -605,26 +668,26 @@
 
     // Input interaction clearing error border
     document.querySelectorAll('input, textarea').forEach(el => {
-      el.addEventListener('input', function() {
-        if(this.value.trim() !== '') {
+      el.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
           this.style.borderColor = 'transparent';
         }
       });
     });
 
     // Form Submission
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
+    document.getElementById('leadForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       if (!validateStep(2)) return;
-      
+
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.innerHTML = 'Submitting...';
       submitBtn.disabled = true;
       submitBtn.style.opacity = '0.7';
 
       const formData = new FormData(this);
-      
+
       const payload = {
         action: "submit_form",
         leadId: leadId,
@@ -641,7 +704,7 @@
       };
 
       const scriptURL = "https://script.google.com/macros/s/AKfycbxLRftndaH_znmmYtWfL9mmP9hoWXiPaBb8sOGBO5DPXZncXF4hX5akHaMgj8CEcMwW/exec";
-      
+
       fetch(scriptURL, {
         method: 'POST',
         mode: 'no-cors',
@@ -649,24 +712,25 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
-      .then(() => {
-        // Show Success UI
-        document.getElementById('formContent').style.display = 'none';
-        document.getElementById('successState').style.display = 'block';
-        
-        // Auto Redirect after 3s
-        setTimeout(() => {
-          let cleanPhone = payload.whatsappNumber.replace(/[^0-9+]/g, '');
-          window.location.href = `whatsapp://send?phone=${cleanPhone}`;
-        }, 3000);
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        submitBtn.innerHTML = 'Error. Try Again.';
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-      });
+        .then(() => {
+          // Show Success UI
+          document.getElementById('formContent').style.display = 'none';
+          document.getElementById('successState').style.display = 'block';
+
+          // Auto Redirect after 3s
+          setTimeout(() => {
+            let cleanPhone = payload.whatsappNumber.replace(/[^0-9+]/g, '');
+            window.location.href = `whatsapp://send?phone=${cleanPhone}`;
+          }, 3000);
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          submitBtn.innerHTML = 'Error. Try Again.';
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        });
     });
   </script>
 </body>
+
 </html>
