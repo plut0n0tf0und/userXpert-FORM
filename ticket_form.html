@@ -434,7 +434,7 @@
     // Pre-fill phone if provided
     if(missedCallPhone) {
         document.getElementById('whatsappNumber').value = decodeURIComponent(missedCallPhone);
-    } else if (leadId && leadId !== 'Unknown') {
+    } else if (leadId && leadId !== 'Unknown' && !leadId.startsWith('L-')) {
         document.getElementById('whatsappNumber').value = decodeURIComponent(leadId);
     }
     
