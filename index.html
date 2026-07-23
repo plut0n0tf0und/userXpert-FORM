@@ -625,7 +625,7 @@
           </h2>
 
           <div class="input-group">
-            <label for="name">Name of Contact <span class="required-indicator" aria-hidden="true">*</span></label>
+            <label for="name">Full Name <span class="required-indicator" aria-hidden="true">*</span></label>
             <div class="input-wrapper">
               <input type="text" id="name" name="name" required placeholder="John Doe" autocomplete="name" aria-describedby="name-error">
               <svg class="validation-icon icon-success" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -887,6 +887,7 @@
 
     // Inline validation setup
     document.querySelectorAll('input:not([type="radio"])').forEach(input => {
+      if (!input.id) return;
       input.addEventListener('blur', () => {
         validateField(input);
       });
@@ -911,7 +912,7 @@
 
     function validateStep(step) {
       const stepDiv = document.getElementById('step-' + step);
-      const inputs = Array.from(stepDiv.querySelectorAll('input:not([type="radio"])'));
+      const inputs = Array.from(stepDiv.querySelectorAll('input:not([type="radio"])')).filter(input => input.id);
       let isValid = true;
       let firstInvalid = null;
 
