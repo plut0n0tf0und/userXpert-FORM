@@ -993,8 +993,8 @@
         leadId: leadId,
         name: formData.get('name'),
         email: formData.get('email'),
-        whatsappNumber: (typeof waIti !== 'undefined' && waIti.getNumber()) ? waIti.getNumber() : formData.get('whatsappNumber'),
-        altNumber: (typeof altIti !== 'undefined' && altIti.getNumber()) ? altIti.getNumber() : formData.get('altNumber'),
+        whatsappNumber: (window.waIti && window.waIti.getNumber()) ? window.waIti.getNumber() : formData.get('whatsappNumber'),
+        altNumber: (window.altIti && window.altIti.getNumber()) ? window.altIti.getNumber() : formData.get('altNumber'),
         businessName: formData.get('businessName'),
         serviceOffered: formData.get('serviceOffered'),
         assistanceType: formData.get('assistanceType'),
@@ -1038,9 +1038,9 @@
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js"
     };
     const waInput = document.querySelector("#whatsappNumber");
-    const waIti = window.intlTelInput(waInput, itiConfig);
+    window.waIti = window.intlTelInput(waInput, itiConfig);
     const altInput = document.querySelector("#altNumber");
-    const altIti = window.intlTelInput(altInput, itiConfig);
+    window.altIti = window.intlTelInput(altInput, itiConfig);
   </script>
 </body>
 </html>
